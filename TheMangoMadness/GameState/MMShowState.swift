@@ -10,6 +10,7 @@ import GameplayKit
 class MMShowState : MMGameState {
     
     
+    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is MMDoItState.Type
     }
@@ -23,5 +24,7 @@ class MMShowState : MMGameState {
     override func willExit(to nextState: GKState) {
         
     }
+    
+    
     
 }

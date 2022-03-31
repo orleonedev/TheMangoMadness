@@ -9,9 +9,9 @@ import GameplayKit
 
 class MMGameState : GKState {
     
-        weak var game: SKScene?
+        weak var game: MMGame?
         
-        init(withGame: SKScene) {
+        init(withGame: MMGame) {
             self.game = withGame
             
             super.init()

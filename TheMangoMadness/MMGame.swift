@@ -10,6 +10,7 @@ import GameplayKit
 
 class MMGame: NSObject, SceneDelegate {
     
+    var gameStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
     
@@ -31,10 +32,19 @@ class MMGame: NSObject, SceneDelegate {
         
         super.init()
         
+        let show = MMShowState(withGame: self)
+        let doIT = MMDoItState(withGame: self)
+        let wrong = MMWrongState(withGame: self)
+        let right = MMRightState(withGame: self)
+        let gameover = MMGameOverState(withGame: self)
+        
+        gameStateMachine = GKStateMachine(states: [show,doIT,wrong,right,gameover])
+        
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
         scene.backgroundColor = SKColor.brown
+        gameStateMachine?.enter(MMShowState.self)
         
         if let sprite = self.mike {
             sprite.position = self.center

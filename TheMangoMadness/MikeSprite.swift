@@ -23,7 +23,7 @@ class MikeSprite: SKNode {
         self.smile.anchorPoint = CGPoint(x: 0.5, y: 0.0)
         self.position = pos
         self.body.position = self.position
-        self.head.position = CGPoint(x: self.position.x, y: self.position.y - 16)
+        self.head.position = CGPoint(x: self.position.x, y: self.position.y + 16)
         self.smile.position = CGPoint(x: self.head.position.x + 8, y: self.head.position.y + 4)
         self.addChild(body)
         self.addChild(head)
