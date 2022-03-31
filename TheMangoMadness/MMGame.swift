@@ -50,16 +50,16 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
-        scene.backgroundColor = SKColor.gray
+        scene.backgroundColor = SKColor.red
         
         
         self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 64, height: 64))
         
-        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.9, height: self.scene.size.height*0.7))
+        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.85, height: self.scene.size.height*0.63))
 
         if let tvFrame = tvFrame  {
-            tvFrame.position = CGPoint(x: center.x, y: center.y + 100)
-            self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width*0.9, height: tvFrame.size.height*0.95))
+            tvFrame.position = CGPoint(x: center.x, y: center.y + 48)
+            self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width, height: tvFrame.size.height))
             transitionSprite?.position = tvFrame.position
             object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y + 64)
             self.scene.addChild(tvFrame)
