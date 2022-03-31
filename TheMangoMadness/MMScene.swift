@@ -11,7 +11,7 @@ import GameplayKit
 
 protocol SceneDelegate: SKSceneDelegate {
     func didMoveToView(scene: MMScene , view: SKView)
-    
+    func touchDown()
 }
 
 class MMScene: SKScene {
@@ -25,6 +25,13 @@ class MMScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         if let game = sceneDelegate as? MMGame {
             game.update(currentTime: currentTime, forScene: self)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let game = sceneDelegate as? MMGame? {
+            game?.touchDown()
         }
     }
     

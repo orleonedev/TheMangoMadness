@@ -13,7 +13,6 @@ class MMGameState : GKState {
         
         init(withGame: MMGame) {
             self.game = withGame
-            
             super.init()
         }
 

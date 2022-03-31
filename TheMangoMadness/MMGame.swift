@@ -10,9 +10,16 @@ import GameplayKit
 
 class MMGame: NSObject, SceneDelegate {
     
+    
+    func touchDown() {
+        
+    }
+    
+    
     var gameStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
+    
     
     var scene: SKScene {
         get {
@@ -25,6 +32,8 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     var mike: MikeSprite?
+    var tvFrame: SKSpriteNode?
+    var transitionSprite: SKSpriteNode?
     
     override init() {
         
@@ -32,6 +41,7 @@ class MMGame: NSObject, SceneDelegate {
         
         super.init()
         
+                
         let show = MMShowState(withGame: self)
         let doIT = MMDoItState(withGame: self)
         let wrong = MMWrongState(withGame: self)
@@ -43,14 +53,21 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
-        scene.backgroundColor = SKColor.brown
-        gameStateMachine?.enter(MMShowState.self)
+        scene.backgroundColor = SKColor.gray
         
-        if let sprite = self.mike {
-            sprite.position = self.center
-            scene.addChild(sprite)
-            sprite.spinHead()
+        
+        
+        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.8, height: self.scene.size.height*0.6))
+
+        if let tvFrame = tvFrame  {
+            tvFrame.position = CGPoint(x: center.x, y: center.y + 100)
+            self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width*0.9, height: tvFrame.size.height*0.95))
+            transitionSprite?.position = tvFrame.position
+            self.scene.addChild(tvFrame)
         }
+        
+        
+        gameStateMachine?.enter(MMDoItState.self)
     }
     
     func update(currentTime: TimeInterval, forScene scene: SKScene) {
