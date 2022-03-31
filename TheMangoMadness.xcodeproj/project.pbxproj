@@ -28,6 +28,7 @@
 		5110E20B27F5BB6F0063292D /* MikeSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20A27F5BB6F0063292D /* MikeSprite.swift */; };
 		5110E20D27F5C6710063292D /* MMGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20C27F5C6710063292D /* MMGame.swift */; };
 		5110E20F27F5C70B0063292D /* MMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20E27F5C70B0063292D /* MMScene.swift */; };
+		660FB2CE27F5D96F00D60D11 /* KeyboardSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		5110E20A27F5BB6F0063292D /* MikeSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeSprite.swift; sourceTree = "<group>"; };
 		5110E20C27F5C6710063292D /* MMGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGame.swift; sourceTree = "<group>"; };
 		5110E20E27F5C70B0063292D /* MMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMScene.swift; sourceTree = "<group>"; };
+		660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardSprite.swift; path = SequenceState/KeyboardSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				5110E1DF27F59B240063292D /* Actions.sks */,
 				5110E1E327F59B240063292D /* GameViewController.swift */,
 				5110E20A27F5BB6F0063292D /* MikeSprite.swift */,
+				660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */,
 				5110E20C27F5C6710063292D /* MMGame.swift */,
 				5110E20E27F5C70B0063292D /* MMScene.swift */,
 				5110E1E827F59B260063292D /* Assets.xcassets */,
@@ -218,6 +221,7 @@
 				5110E1F527F5AD0C0063292D /* MMShowState.swift in Sources */,
 				5110E1F927F5AEED0063292D /* MMWrongState.swift in Sources */,
 				5110E20127F5B66E0063292D /* MMBaseSequence.swift in Sources */,
+				660FB2CE27F5D96F00D60D11 /* KeyboardSprite.swift in Sources */,
 				5110E20327F5B6B90063292D /* MMSecondSequence.swift in Sources */,
 				5110E1FB27F5AEF70063292D /* MMRightState.swift in Sources */,
 				5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */,
@@ -370,7 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SA4H49C4LT;
+				DEVELOPMENT_TEAM = BWUQ8K9QZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -400,7 +404,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SA4H49C4LT;
+				DEVELOPMENT_TEAM = BWUQ8K9QZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -9,7 +9,7 @@ import SpriteKit
 import GameplayKit
 
 class MMGame: NSObject, SceneDelegate {
-    
+
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
     
@@ -24,11 +24,12 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     var mike: MikeSprite?
+    var keyboard: KeyboardSprite?
     
     override init() {
         
         self.mike = MikeSprite(headSprite: "bruh", bodySprite: "bruh", pos: CGPoint())
-        
+
         super.init()
         
     }
@@ -36,11 +37,38 @@ class MMGame: NSObject, SceneDelegate {
     func didMoveToView(scene: MMScene, view: SKView) {
         scene.backgroundColor = SKColor.brown
         
+        self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
+        
         if let sprite = self.mike {
             sprite.position = self.center
             scene.addChild(sprite)
             sprite.spinHead()
         }
+        
+        if let keyboardButtonSprite = self.keyboard {
+            keyboardButtonSprite.position = self.center
+            scene.addChild(keyboardButtonSprite)
+//            sprite.spinHead()
+        }
+    }
+    
+    func touchDown(node: SKNode) {
+
+                print("touch")
+            if (node.name == "redButton") {
+                    keyboard?.redAnimation()
+                    print("ciao")
+                }
+                else{
+                    if (node.name == "blueButton"){
+                        keyboard?.blueAnimation()
+                    }
+                    else{
+                        if (node.name == "greenButton"){
+                            keyboard?.greenAnimation()
+                        }
+                    }
+                }
     }
     
     func update(currentTime: TimeInterval, forScene scene: SKScene) {
@@ -52,12 +80,11 @@ class MMGame: NSObject, SceneDelegate {
         let dt = currentTime - prevUpdateTime
         prevUpdateTime = currentTime
         
-        
+        }
+
+    
     }
     
-}
-
-
 extension MMGame {
     var center: CGPoint {
         get{
