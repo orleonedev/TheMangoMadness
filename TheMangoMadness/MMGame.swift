@@ -64,7 +64,7 @@ class MMGame: NSObject, SceneDelegate {
             object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y + 64)
             self.scene.addChild(tvFrame)
         
-        self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
+        self.keyboard = KeyboardSprite(pos: CGPoint(), scena: scene)
         
         
         gameStateMachine?.enter(MMShowState.self)
