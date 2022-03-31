@@ -14,7 +14,6 @@ class MMGame: NSObject, SceneDelegate {
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
     
-    
     var scene: SKScene {
         get {
             if _scene == nil {
@@ -29,6 +28,9 @@ class MMGame: NSObject, SceneDelegate {
     var tvFrame: SKSpriteNode?
     var transitionSprite: SKSpriteNode?
     var keyboard: KeyboardSprite?
+    
+    var sequence: [Int] = []
+    var object: SKSpriteNode?
     
     override init() {
         
@@ -51,19 +53,21 @@ class MMGame: NSObject, SceneDelegate {
         scene.backgroundColor = SKColor.gray
         
         
+        self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 64, height: 64))
         
-        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.8, height: self.scene.size.height*0.6))
+        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.9, height: self.scene.size.height*0.7))
 
         if let tvFrame = tvFrame  {
             tvFrame.position = CGPoint(x: center.x, y: center.y + 100)
             self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width*0.9, height: tvFrame.size.height*0.95))
             transitionSprite?.position = tvFrame.position
+            object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y + 64)
             self.scene.addChild(tvFrame)
         
         self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
         
         
-        gameStateMachine?.enter(MMDoItState.self)
+        gameStateMachine?.enter(MMShowState.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)
