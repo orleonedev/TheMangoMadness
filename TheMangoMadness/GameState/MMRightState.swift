@@ -22,20 +22,20 @@ class MMRightState : MMGameState {
                 SKAction.fadeIn(withDuration: 1),
                 SKAction.run {
                     trans.removeFromParent()
-                    if let sprite = self.game?.mike {
-                        sprite.position = self.game?.center ?? CGPoint()
-                        self.game?.scene.addChild(sprite)
-                        sprite.spinHead()
-                        sprite.run(SKAction.sequence([
-                            SKAction.run {
-                                sprite.happy()
-                            },
-                            SKAction.run {
-                                sprite.removeFromParent()
-                            }]))
-
-                        
-                    }
+//                    if let sprite = self.game?.mike {
+//                        sprite.position = self.game?.center ?? CGPoint()
+//                        self.game?.scene.addChild(sprite)
+//                        sprite.spinHead()
+//                        sprite.run(SKAction.sequence([
+//                            SKAction.run {
+//                                sprite.happy()
+//                            },
+//                            SKAction.run {
+//                                sprite.removeFromParent()
+//                            }]))
+//
+//                        
+//                    }
                 }]))
         }
         

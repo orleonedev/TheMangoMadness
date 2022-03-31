@@ -59,23 +59,18 @@ class MMGame: NSObject, SceneDelegate {
             self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width*0.9, height: tvFrame.size.height*0.95))
             transitionSprite?.position = tvFrame.position
             self.scene.addChild(tvFrame)
-        scene.backgroundColor = SKColor.brown
         
         self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
-        
-        if let sprite = self.mike {
-            sprite.position = self.center
-            scene.addChild(sprite)
-            sprite.spinHead()
-        }
         
         
         gameStateMachine?.enter(MMDoItState.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)
-//            sprite.spinHead()
+
+            }
         }
+        
     }
     
     func touchDown(node: SKNode) {
@@ -109,6 +104,8 @@ class MMGame: NSObject, SceneDelegate {
     
     }
     
+
+
 extension MMGame {
     var center: CGPoint {
         get{
