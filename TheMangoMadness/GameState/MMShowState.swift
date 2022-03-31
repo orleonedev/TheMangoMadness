@@ -19,7 +19,7 @@ class MMShowState : MMGameState {
         
         game?.sequence = (1...3).map({_ in Int.random(in: 1...3)})
         
-        print(game?.sequence)
+        print(game?.sequence as Any)
         
         let cycle = SKAction.sequence([
             SKAction.run {
@@ -39,7 +39,7 @@ class MMShowState : MMGameState {
                     self.game?.object?.color = SKColor.blue
                 }
                 
-                self.game?.object?.position = self.game!.center
+                
                 self.i += 1
                     
                 },
@@ -50,7 +50,7 @@ class MMShowState : MMGameState {
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
             
-            let noiseAnim = SKAction.sequence([SKAction.fadeOut(withDuration: 1.0),
+            let noiseAnim = SKAction.sequence([SKAction(named: "staticAnim")!,
                                                SKAction.run {
                 trans.removeFromParent()
             }])
@@ -59,7 +59,7 @@ class MMShowState : MMGameState {
         }
             
         self.game?.scene.run(SKAction.sequence([
-            SKAction.wait(forDuration: 1.0),
+            SKAction.wait(forDuration: 2.0),
             SKAction.run {
                 if let obj = self.game?.object {
                     self.game?.scene.addChild(obj)
@@ -87,7 +87,7 @@ class MMShowState : MMGameState {
     }
     
     override func willExit(to nextState: GKState) {
-        
+        i = 0
     }
     
     

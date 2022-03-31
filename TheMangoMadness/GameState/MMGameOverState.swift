@@ -13,13 +13,13 @@ class MMGameOverState : MMGameState {
     }
     
     override func didEnter(from previousState: GKState?) {
+        print("END")
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
-            trans.run(SKAction.sequence([
-                SKAction.fadeOut(withDuration: 1),
-                SKAction.fadeIn(withDuration: 1),
+            trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
-                    trans.removeFromParent()
+                print(self.game?.score)
+//                    trans.removeFromParent()
 //                    if let sprite = self.game?.mike {
 //                        sprite.position = self.game?.center ?? CGPoint()
 //                        self.game?.scene.addChild(sprite)

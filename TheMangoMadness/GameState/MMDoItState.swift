@@ -8,54 +8,75 @@ import GameplayKit
 
 class MMDoItState : MMGameState {
     
-    var timer: TimeInterval = 5.0
-    var completed: Bool = false
+    var timer: TimeInterval = 7
+    var completed: Bool = false 
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is MMRightState.Type || stateClass is MMWrongState.Type
     }
     
     override func didEnter(from previousState: GKState?) {
+        print("DO IT NOW")
+        
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
-            trans.run(SKAction.sequence([
-                SKAction.fadeOut(withDuration: 1),
-                SKAction.fadeIn(withDuration: 1),
+            trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
                     trans.removeFromParent()
-//                    if let sprite = self.game?.mike {
-//                        sprite.position = self.game?.center ?? CGPoint()
-//                        self.game?.scene.addChild(sprite)
-//                        sprite.spinHead()
-//                        sprite.run(SKAction.sequence([
-//                            SKAction.run {
-//                                sprite.talk()
-//                            },
-//                            SKAction.run {
-//                                sprite.removeFromParent()
-//                            }]))
-//
-//                        
-//                    }
                 }]))
+        }
+        
+        if let willy = game?.willy {
+            willy.isHidden = true
+            self.game?.scene.addChild(willy)
+            willy.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
+                                         SKAction.run {
+                willy.isHidden = false
+                willy.spinHead()
+                willy.body.run(SKAction(named: "talkAnim")!)
+            },
+                                         SKAction.wait(forDuration: 1.5),
+                                         SKAction.run {
+                willy.removeFromParent()
+            }]))
+        }
+        
+        if let timer = game?.keyboard?.timer {
+            timer.run(SKAction(named: "timerAnim")!)
+            
         }
         
         
     }
     
     override func willExit(to nextState: GKState) {
-        
+        timer = 7
+        game?.input.removeAll()
+        completed = false
     }
     
     override func update(deltaTime seconds: TimeInterval) {
         
-        if !completed{
-            timer -= seconds
+        
+        timer -= seconds
             
-        }
+        
         
         if timer < 0 {
-            self.stateMachine?.enter(MMWrongState.self)
+            if let count = game?.input.count {
+                if count == game?.sequence.count {
+                    if game?.input == game?.sequence {
+                        completed = true
+                    }
+                }
+            }
+            
+            if completed {
+                self.stateMachine?.enter(MMRightState.self)
+            }else {
+                self.stateMachine?.enter(MMWrongState.self)
+            }
+            
         }
         
     }

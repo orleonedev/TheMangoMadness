@@ -17,27 +17,33 @@ class MMRightState : MMGameState {
     override func didEnter(from previousState: GKState?) {
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
-            trans.run(SKAction.sequence([
-                SKAction.fadeOut(withDuration: 1),
-                SKAction.fadeIn(withDuration: 1),
+            trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
                     trans.removeFromParent()
-//                    if let sprite = self.game?.mike {
-//                        sprite.position = self.game?.center ?? CGPoint()
-//                        self.game?.scene.addChild(sprite)
-//                        sprite.spinHead()
-//                        sprite.run(SKAction.sequence([
-//                            SKAction.run {
-//                                sprite.happy()
-//                            },
-//                            SKAction.run {
-//                                sprite.removeFromParent()
-//                            }]))
-//
-//                        
-//                    }
+
                 }]))
         }
+        if let willy = game?.willy {
+            willy.isHidden = true
+            self.game?.scene.addChild(willy)
+            willy.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
+                                         SKAction.run {
+                willy.isHidden = false
+                willy.spinHead()
+                willy.body.run(SKAction(named: "happyAnim")!)
+            },
+                                         SKAction.wait(forDuration: 2.5),
+                                         SKAction.run {
+                willy.removeFromParent()
+            }]))
+        }
+        
+        game?.score += 10
+        game?.scene.run(SKAction.sequence([
+            SKAction.wait(forDuration: 3.0),
+            SKAction.run {
+                self.stateMachine?.enter(MMShowState.self)
+            }]))
         
     }
     

@@ -55,7 +55,7 @@ class KeyboardSprite: SKNode {
         
         self.lifechannel1 = SKSpriteNode(texture: SKTexture(imageNamed: "pulsantevita"), size: CGSize(width: backgroundButton!.size.width*0.1, height: backgroundButton!.size.height*0.25))
         self.lifechannel1?.position = CGPoint(x: scena.size.width*0.073, y: scena.size.height*0.437)
-        self.lifechannel1?.name = "lifechannel1"
+        self.lifechannel1?.name = "lifechannel3"
         
         self.lifechannel2 = SKSpriteNode(texture: SKTexture(imageNamed: "pulsantevita"), size: CGSize(width: backgroundButton!.size.width*0.1, height: backgroundButton!.size.height*0.25))
         self.lifechannel2?.position = CGPoint(x: -scena.size.width*0.122, y: scena.size.height*0.437)
@@ -63,7 +63,7 @@ class KeyboardSprite: SKNode {
         
         self.lifechannel3 = SKSpriteNode(texture: SKTexture(imageNamed: "pulsantevita"), size: CGSize(width: backgroundButton!.size.width*0.1, height: backgroundButton!.size.height*0.25))
         self.lifechannel3?.position = CGPoint(x: -scena.size.width*0.317, y: scena.size.height*0.437)
-        self.lifechannel3?.name = "lifechannel3"
+        self.lifechannel3?.name = "lifechannel1"
         
         self.blueButton = SKSpriteNode(texture: SKTexture(imageNamed: "blueButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.blueButton?.position = CGPoint(x: scena.size.width*0.3, y: -scena.size.height*0.378)
@@ -78,7 +78,7 @@ class KeyboardSprite: SKNode {
         self.greenButton?.position = CGPoint(x: -scena.size.width*0.3, y: -scena.size.height*0.378)
         self.greenButton?.name = "greenButton"
         
-        self.timer = SKSpriteNode(texture: SKTexture(imageNamed: "timerbig0"), size: CGSize(width: backgroundButton!.size.width*0.55, height: backgroundButton!.size.height*0.45))
+        self.timer = SKSpriteNode(texture: SKTexture(imageNamed: "timerbig10"), size: CGSize(width: backgroundButton!.size.width*0.55, height: backgroundButton!.size.height*0.45))
         self.timer?.position = CGPoint(x: 0, y: -scena.size.height*0.26)
         self.timer?.name = "timer"
         

@@ -25,7 +25,7 @@
 		5110E20527F5B6D50063292D /* MMThirdSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20427F5B6D50063292D /* MMThirdSequence.swift */; };
 		5110E20727F5B7060063292D /* MMFourthSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20627F5B7060063292D /* MMFourthSequence.swift */; };
 		5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20827F5B77F0063292D /* MMFifthSequence.swift */; };
-		5110E20B27F5BB6F0063292D /* MikeSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20A27F5BB6F0063292D /* MikeSprite.swift */; };
+		5110E20B27F5BB6F0063292D /* ColorWilly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20A27F5BB6F0063292D /* ColorWilly.swift */; };
 		5110E20D27F5C6710063292D /* MMGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20C27F5C6710063292D /* MMGame.swift */; };
 		5110E20F27F5C70B0063292D /* MMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20E27F5C70B0063292D /* MMScene.swift */; };
 		660FB2CE27F5D96F00D60D11 /* KeyboardSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */; };
@@ -51,7 +51,7 @@
 		5110E20427F5B6D50063292D /* MMThirdSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMThirdSequence.swift; sourceTree = "<group>"; };
 		5110E20627F5B7060063292D /* MMFourthSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMFourthSequence.swift; sourceTree = "<group>"; };
 		5110E20827F5B77F0063292D /* MMFifthSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMFifthSequence.swift; sourceTree = "<group>"; };
-		5110E20A27F5BB6F0063292D /* MikeSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeSprite.swift; sourceTree = "<group>"; };
+		5110E20A27F5BB6F0063292D /* ColorWilly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWilly.swift; sourceTree = "<group>"; };
 		5110E20C27F5C6710063292D /* MMGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGame.swift; sourceTree = "<group>"; };
 		5110E20E27F5C70B0063292D /* MMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMScene.swift; sourceTree = "<group>"; };
 		660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardSprite.swift; path = SequenceState/KeyboardSprite.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				5110E1DB27F59B240063292D /* AppDelegate.swift */,
 				5110E1DF27F59B240063292D /* Actions.sks */,
 				5110E1E327F59B240063292D /* GameViewController.swift */,
-				5110E20A27F5BB6F0063292D /* MikeSprite.swift */,
+				5110E20A27F5BB6F0063292D /* ColorWilly.swift */,
 				660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */,
 				5110E20C27F5C6710063292D /* MMGame.swift */,
 				5110E20E27F5C70B0063292D /* MMScene.swift */,
@@ -225,7 +225,7 @@
 				5110E20327F5B6B90063292D /* MMSecondSequence.swift in Sources */,
 				5110E1FB27F5AEF70063292D /* MMRightState.swift in Sources */,
 				5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */,
-				5110E20B27F5BB6F0063292D /* MikeSprite.swift in Sources */,
+				5110E20B27F5BB6F0063292D /* ColorWilly.swift in Sources */,
 				5110E1FD27F5AF160063292D /* MMGameOverState.swift in Sources */,
 				5110E1DC27F59B240063292D /* AppDelegate.swift in Sources */,
 			);

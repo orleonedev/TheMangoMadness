@@ -13,7 +13,8 @@ class MMGame: NSObject, SceneDelegate {
     var gameStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
-    
+    var score: Int = 0
+    var health: Int = 3
     var scene: SKScene {
         get {
             if _scene == nil {
@@ -24,17 +25,18 @@ class MMGame: NSObject, SceneDelegate {
         }
     }
     
-    var mike: MikeSprite?
+    var willy: ColorWilly?
     var tvFrame: SKSpriteNode?
     var transitionSprite: SKSpriteNode?
     var keyboard: KeyboardSprite?
     
     var sequence: [Int] = []
+    var input: [Int] = []
     var object: SKSpriteNode?
     
     override init() {
         
-        self.mike = MikeSprite(headSprite: "bruh", bodySprite: "bruh", pos: CGPoint())
+        self.willy = ColorWilly()
 
         super.init()
         
@@ -50,22 +52,30 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
-        scene.backgroundColor = SKColor.red
+        scene.backgroundColor = SKColor.darkGray
         
         
         self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 64, height: 64))
         
-        self.tvFrame = SKSpriteNode(color: SKColor.black, size: CGSize(width: self.scene.size.width*0.85, height: self.scene.size.height*0.63))
+        self.tvFrame = SKSpriteNode(color: SKColor.clear, size: CGSize(width: self.scene.size.width*0.85, height: self.scene.size.height*0.63))
+        
+        
+        
 
         if let tvFrame = tvFrame  {
-            tvFrame.position = CGPoint(x: center.x, y: center.y + 48)
-            self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width, height: tvFrame.size.height))
+            tvFrame.position = CGPoint(x: center.x, y: center.y )
+            tvFrame.zPosition = -14
+            self.transitionSprite = SKSpriteNode(texture: SKTexture(imageNamed: "statico0"),color: SKColor.white, size: CGSize(width: scene.size.width*1.3, height: scene.size.height*1.3))
             transitionSprite?.position = tvFrame.position
+            transitionSprite?.zPosition = -13
             object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y + 64)
             self.scene.addChild(tvFrame)
         
         self.keyboard = KeyboardSprite(pos: CGPoint(), scena: scene)
         
+            willy?.position = CGPoint(x: center.x, y: center.y )
+            willy?.setScale(1.55)
+            willy?.zPosition = -1
         
         gameStateMachine?.enter(MMShowState.self)
         if let keyboardButtonSprite = self.keyboard {
@@ -79,19 +89,28 @@ class MMGame: NSObject, SceneDelegate {
     
     func touchDown(node: SKNode) {
 
-        if (node.name == "redButton") {
+        if gameStateMachine?.currentState is MMDoItState{
+            if (node.name == "redButton") {
                     keyboard?.redAnimation()
+            input.append(2)
+                print(input)
                 }
                 else{
                     if (node.name == "blueButton"){
                         keyboard?.blueAnimation()
+                        input.append(3)
+                        print(input)
                     }
                     else{
                         if (node.name == "greenButton"){
                             keyboard?.greenAnimation()
+                            input.append(1)
+                            print(input)
                         }
                     }
                 }
+            
+        }
     }
     
     func update(currentTime: TimeInterval, forScene scene: SKScene) {
@@ -102,6 +121,8 @@ class MMGame: NSObject, SceneDelegate {
         
         let dt = currentTime - prevUpdateTime
         prevUpdateTime = currentTime
+        
+        gameStateMachine?.update(deltaTime: dt)
         
         }
 
