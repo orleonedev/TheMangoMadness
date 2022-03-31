@@ -13,6 +13,21 @@
 		5110E1E727F59B240063292D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5110E1E527F59B240063292D /* Main.storyboard */; };
 		5110E1E927F59B260063292D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5110E1E827F59B260063292D /* Assets.xcassets */; };
 		5110E1EC27F59B260063292D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5110E1EA27F59B260063292D /* LaunchScreen.storyboard */; };
+		5110E1F327F5AC730063292D /* MMGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1F227F5AC730063292D /* MMGameState.swift */; };
+		5110E1F527F5AD0C0063292D /* MMShowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1F427F5AD0C0063292D /* MMShowState.swift */; };
+		5110E1F727F5AE960063292D /* MMDoItState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1F627F5AE960063292D /* MMDoItState.swift */; };
+		5110E1F927F5AEED0063292D /* MMWrongState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1F827F5AEED0063292D /* MMWrongState.swift */; };
+		5110E1FB27F5AEF70063292D /* MMRightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1FA27F5AEF70063292D /* MMRightState.swift */; };
+		5110E1FD27F5AF160063292D /* MMGameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1FC27F5AF160063292D /* MMGameOverState.swift */; };
+		5110E1FF27F5B6420063292D /* MMSequenceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1FE27F5B6420063292D /* MMSequenceState.swift */; };
+		5110E20127F5B66E0063292D /* MMBaseSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20027F5B66E0063292D /* MMBaseSequence.swift */; };
+		5110E20327F5B6B90063292D /* MMSecondSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20227F5B6B90063292D /* MMSecondSequence.swift */; };
+		5110E20527F5B6D50063292D /* MMThirdSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20427F5B6D50063292D /* MMThirdSequence.swift */; };
+		5110E20727F5B7060063292D /* MMFourthSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20627F5B7060063292D /* MMFourthSequence.swift */; };
+		5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20827F5B77F0063292D /* MMFifthSequence.swift */; };
+		5110E20B27F5BB6F0063292D /* MikeSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20A27F5BB6F0063292D /* MikeSprite.swift */; };
+		5110E20D27F5C6710063292D /* MMGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20C27F5C6710063292D /* MMGame.swift */; };
+		5110E20F27F5C70B0063292D /* MMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20E27F5C70B0063292D /* MMScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +38,21 @@
 		5110E1E627F59B240063292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5110E1E827F59B260063292D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5110E1EB27F59B260063292D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5110E1F227F5AC730063292D /* MMGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGameState.swift; sourceTree = "<group>"; };
+		5110E1F427F5AD0C0063292D /* MMShowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMShowState.swift; sourceTree = "<group>"; };
+		5110E1F627F5AE960063292D /* MMDoItState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMDoItState.swift; sourceTree = "<group>"; };
+		5110E1F827F5AEED0063292D /* MMWrongState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMWrongState.swift; sourceTree = "<group>"; };
+		5110E1FA27F5AEF70063292D /* MMRightState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMRightState.swift; sourceTree = "<group>"; };
+		5110E1FC27F5AF160063292D /* MMGameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGameOverState.swift; sourceTree = "<group>"; };
+		5110E1FE27F5B6420063292D /* MMSequenceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMSequenceState.swift; sourceTree = "<group>"; };
+		5110E20027F5B66E0063292D /* MMBaseSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMBaseSequence.swift; sourceTree = "<group>"; };
+		5110E20227F5B6B90063292D /* MMSecondSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMSecondSequence.swift; sourceTree = "<group>"; };
+		5110E20427F5B6D50063292D /* MMThirdSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMThirdSequence.swift; sourceTree = "<group>"; };
+		5110E20627F5B7060063292D /* MMFourthSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMFourthSequence.swift; sourceTree = "<group>"; };
+		5110E20827F5B77F0063292D /* MMFifthSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMFifthSequence.swift; sourceTree = "<group>"; };
+		5110E20A27F5BB6F0063292D /* MikeSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeSprite.swift; sourceTree = "<group>"; };
+		5110E20C27F5C6710063292D /* MMGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGame.swift; sourceTree = "<group>"; };
+		5110E20E27F5C70B0063292D /* MMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,14 +85,54 @@
 		5110E1DA27F59B240063292D /* TheMangoMadness */ = {
 			isa = PBXGroup;
 			children = (
+				5110E21227F5D3FE0063292D /* DubbiaUtilità */,
+				5110E21127F5D3A50063292D /* GameState */,
+				5110E21027F5D39B0063292D /* SequenceState */,
 				5110E1DB27F59B240063292D /* AppDelegate.swift */,
 				5110E1DF27F59B240063292D /* Actions.sks */,
 				5110E1E327F59B240063292D /* GameViewController.swift */,
-				5110E1E527F59B240063292D /* Main.storyboard */,
+				5110E20A27F5BB6F0063292D /* MikeSprite.swift */,
+				5110E20C27F5C6710063292D /* MMGame.swift */,
+				5110E20E27F5C70B0063292D /* MMScene.swift */,
 				5110E1E827F59B260063292D /* Assets.xcassets */,
-				5110E1EA27F59B260063292D /* LaunchScreen.storyboard */,
 			);
 			path = TheMangoMadness;
+			sourceTree = "<group>";
+		};
+		5110E21027F5D39B0063292D /* SequenceState */ = {
+			isa = PBXGroup;
+			children = (
+				5110E1FE27F5B6420063292D /* MMSequenceState.swift */,
+				5110E20027F5B66E0063292D /* MMBaseSequence.swift */,
+				5110E20227F5B6B90063292D /* MMSecondSequence.swift */,
+				5110E20427F5B6D50063292D /* MMThirdSequence.swift */,
+				5110E20627F5B7060063292D /* MMFourthSequence.swift */,
+				5110E20827F5B77F0063292D /* MMFifthSequence.swift */,
+			);
+			path = SequenceState;
+			sourceTree = "<group>";
+		};
+		5110E21127F5D3A50063292D /* GameState */ = {
+			isa = PBXGroup;
+			children = (
+				5110E1F227F5AC730063292D /* MMGameState.swift */,
+				5110E1F427F5AD0C0063292D /* MMShowState.swift */,
+				5110E1F627F5AE960063292D /* MMDoItState.swift */,
+				5110E1F827F5AEED0063292D /* MMWrongState.swift */,
+				5110E1FA27F5AEF70063292D /* MMRightState.swift */,
+				5110E1FC27F5AF160063292D /* MMGameOverState.swift */,
+			);
+			path = GameState;
+			sourceTree = "<group>";
+		};
+		5110E21227F5D3FE0063292D /* DubbiaUtilità */ = {
+			isa = PBXGroup;
+			children = (
+				5110E1E527F59B240063292D /* Main.storyboard */,
+				5110E1EA27F59B260063292D /* LaunchScreen.storyboard */,
+			);
+			name = "DubbiaUtilità";
+			path = "DubbiaUtilità";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +207,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5110E1FF27F5B6420063292D /* MMSequenceState.swift in Sources */,
+				5110E20F27F5C70B0063292D /* MMScene.swift in Sources */,
+				5110E20727F5B7060063292D /* MMFourthSequence.swift in Sources */,
+				5110E20527F5B6D50063292D /* MMThirdSequence.swift in Sources */,
+				5110E20D27F5C6710063292D /* MMGame.swift in Sources */,
+				5110E1F727F5AE960063292D /* MMDoItState.swift in Sources */,
+				5110E1F327F5AC730063292D /* MMGameState.swift in Sources */,
 				5110E1E427F59B240063292D /* GameViewController.swift in Sources */,
+				5110E1F527F5AD0C0063292D /* MMShowState.swift in Sources */,
+				5110E1F927F5AEED0063292D /* MMWrongState.swift in Sources */,
+				5110E20127F5B66E0063292D /* MMBaseSequence.swift in Sources */,
+				5110E20327F5B6B90063292D /* MMSecondSequence.swift in Sources */,
+				5110E1FB27F5AEF70063292D /* MMRightState.swift in Sources */,
+				5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */,
+				5110E20B27F5BB6F0063292D /* MikeSprite.swift in Sources */,
+				5110E1FD27F5AF160063292D /* MMGameOverState.swift in Sources */,
 				5110E1DC27F59B240063292D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
