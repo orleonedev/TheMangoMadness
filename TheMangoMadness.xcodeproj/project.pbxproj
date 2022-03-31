@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C64F83A27F5B2F40001B197 /* FreePixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreePixel.ttf; sourceTree = "<group>"; };
 		5110E1D827F59B240063292D /* TheMangoMadness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMangoMadness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5110E1DB27F59B240063292D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5110E1DD27F59B240063292D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -40,9 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C64F83927F5B2E30001B197 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1C64F83A27F5B2F40001B197 /* FreePixel.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		5110E1CF27F59B240063292D = {
 			isa = PBXGroup;
 			children = (
+				1C64F83927F5B2E30001B197 /* Fonts */,
 				5110E1DA27F59B240063292D /* TheMangoMadness */,
 				5110E1D927F59B240063292D /* Products */,
 			);
@@ -60,9 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				5110E1DB27F59B240063292D /* AppDelegate.swift */,
+				5110E1E127F59B240063292D /* GameScene.swift */,
 				5110E1DD27F59B240063292D /* GameScene.sks */,
 				5110E1DF27F59B240063292D /* Actions.sks */,
-				5110E1E127F59B240063292D /* GameScene.swift */,
 				5110E1E327F59B240063292D /* GameViewController.swift */,
 				5110E1E527F59B240063292D /* Main.storyboard */,
 				5110E1E827F59B260063292D /* Assets.xcassets */,
