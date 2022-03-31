@@ -10,12 +10,6 @@ import GameplayKit
 
 class MMGame: NSObject, SceneDelegate {
     
-    
-    func touchDown() {
-        
-    }
-    
-    
     var gameStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
@@ -34,11 +28,12 @@ class MMGame: NSObject, SceneDelegate {
     var mike: MikeSprite?
     var tvFrame: SKSpriteNode?
     var transitionSprite: SKSpriteNode?
+    var keyboard: KeyboardSprite?
     
     override init() {
         
         self.mike = MikeSprite(headSprite: "bruh", bodySprite: "bruh", pos: CGPoint())
-        
+
         super.init()
         
                 
@@ -64,10 +59,40 @@ class MMGame: NSObject, SceneDelegate {
             self.transitionSprite = SKSpriteNode(color: SKColor.white, size: CGSize(width: tvFrame.size.width*0.9, height: tvFrame.size.height*0.95))
             transitionSprite?.position = tvFrame.position
             self.scene.addChild(tvFrame)
+        scene.backgroundColor = SKColor.brown
+        
+        self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
+        
+        if let sprite = self.mike {
+            sprite.position = self.center
+            scene.addChild(sprite)
+            sprite.spinHead()
         }
         
         
         gameStateMachine?.enter(MMDoItState.self)
+        if let keyboardButtonSprite = self.keyboard {
+            keyboardButtonSprite.position = self.center
+            scene.addChild(keyboardButtonSprite)
+//            sprite.spinHead()
+        }
+    }
+    
+    func touchDown(node: SKNode) {
+
+        if (node.name == "redButton") {
+                    keyboard?.redAnimation()
+                }
+                else{
+                    if (node.name == "blueButton"){
+                        keyboard?.blueAnimation()
+                    }
+                    else{
+                        if (node.name == "greenButton"){
+                            keyboard?.greenAnimation()
+                        }
+                    }
+                }
     }
     
     func update(currentTime: TimeInterval, forScene scene: SKScene) {
@@ -79,12 +104,11 @@ class MMGame: NSObject, SceneDelegate {
         let dt = currentTime - prevUpdateTime
         prevUpdateTime = currentTime
         
-        
+        }
+
+    
     }
     
-}
-
-
 extension MMGame {
     var center: CGPoint {
         get{
