@@ -54,10 +54,8 @@ class MMGame: NSObject, SceneDelegate {
     
     func touchDown(node: SKNode) {
 
-                print("touch")
-            if (node.name == "redButton") {
+        if (node.name == "redButton") {
                     keyboard?.redAnimation()
-                    print("ciao")
                 }
                 else{
                     if (node.name == "blueButton"){
