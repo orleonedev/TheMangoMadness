@@ -77,7 +77,6 @@ class MMGame: NSObject, SceneDelegate {
 
         if (node.name == "redButton") {
                     keyboard?.redAnimation()
-            keyboard?.timerAnimation()
                 }
                 else{
                     if (node.name == "blueButton"){
