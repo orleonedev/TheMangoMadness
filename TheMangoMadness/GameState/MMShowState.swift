@@ -8,6 +8,8 @@
 import GameplayKit
 
 class MMShowState : MMGameState {
+    
+    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is MMDoItState.Type
     }
