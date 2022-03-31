@@ -60,7 +60,7 @@ class MMGame: NSObject, SceneDelegate {
             transitionSprite?.position = tvFrame.position
             self.scene.addChild(tvFrame)
         
-        self.keyboard = KeyboardSprite(blueSprite: "blueButton", greenSprite: "greenButton", redSprite: "redButton", pos: CGPoint(), scena: scene)
+        self.keyboard = KeyboardSprite(pos: CGPoint(), scena: scene)
         
         
         gameStateMachine?.enter(MMDoItState.self)
@@ -77,6 +77,7 @@ class MMGame: NSObject, SceneDelegate {
 
         if (node.name == "redButton") {
                     keyboard?.redAnimation()
+            keyboard?.timerAnimation()
                 }
                 else{
                     if (node.name == "blueButton"){
