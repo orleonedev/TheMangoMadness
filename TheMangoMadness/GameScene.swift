@@ -10,8 +10,9 @@ import GameplayKit
 
 class GameScene: SKScene {
     let guessButton = SKSpriteNode(imageNamed: "guess")
+    let wrongButton = SKSpriteNode(imageNamed: "wrong")
     var controlling = false
-    var comparing = 0
+    var comparing: [Int] = []
     var sequenceLabel: SKLabelNode?
     var showedNumber = 0{
         didSet{
@@ -30,20 +31,26 @@ class GameScene: SKScene {
         let touchLocation = touch.location(in: self)
         let nodeAtPoint = atPoint(touchLocation)
         if controlling {
-        if let touchedNode = nodeAtPoint as? SKSpriteNode {
-            if touchedNode.name?.starts(with: "Button1") == true {
-                comparing = 1
-                print("pressed button1")
+            if let touchedNode = nodeAtPoint as? SKSpriteNode {
+                if touchedNode.name?.starts(with: "Button1") == true {
+                    if comparing.count < 3 {
+                    comparing.append(1)
+                    print("pressed button1")
+                }
+                }
+                if touchedNode.name?.starts(with: "Button2") == true {
+                    if comparing.count < 3 {
+                    comparing.append(2)
+                    print("pressed button2")
+                }
+                }
+                if touchedNode.name?.starts(with: "Button3") == true {
+                    if comparing.count < 3 {
+                    comparing.append(3)
+                    print("pressed button3")
+                }
+                }
             }
-            if touchedNode.name?.starts(with: "Button2") == true {
-                comparing = 2
-                print("pressed button2")
-            }
-            if touchedNode.name?.starts(with: "Button3") == true {
-                comparing = 3
-                print("pressed button3")
-            }
-        }
         }
     }
     
@@ -62,46 +69,81 @@ class GameScene: SKScene {
     }
     
     func createSequence(){
+        guessButton.isHidden = true
+        wrongButton.isHidden = true
+        var guessed = false
+        comparing = []
         controlling = false
         guessButton.isHidden = true
-        let sequence = (1...counter).map( {_ in Int.random(in: 1...3)} )
+        let sequence = (1...counter).map({_ in Int.random(in: 1...3)})
         var i = 0
         print(sequence)
         let cycle = SKAction.sequence([SKAction.run {self.sequenceLabel?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.2))},
-                                                SKAction.wait(forDuration: 0.1), SKAction.run{self.sequenceLabel?.run(SKAction.fadeAlpha(to: 1.0, duration: 0.2))}, SKAction.run{
+                                       SKAction.wait(forDuration: 0.1), SKAction.run{self.sequenceLabel?.run(SKAction.fadeAlpha(to: 1.0, duration: 0.2))}, SKAction.run{
             self.showedNumber = sequence[i]
             i += 1
-            
             print("cycle at step \(i)")
         },
-                                                SKAction.run {self.sequenceLabel?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.2))},
-                                                SKAction.wait(forDuration: 0.1), SKAction.run{self.sequenceLabel?.run(SKAction.fadeAlpha(to: 1.0, duration: 0.2))}])
+                                       SKAction.run {self.sequenceLabel?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.2))},
+                                       SKAction.wait(forDuration: 0.1), SKAction.run{self.sequenceLabel?.run(SKAction.fadeAlpha(to: 1.0, duration: 0.2))}])
         self.run(SKAction.sequence([cycle, SKAction.wait(forDuration: 0.5), cycle, SKAction.wait(forDuration: 0.5), cycle, SKAction.run{
             self.controlling = true
-            self.guessButton.isHidden = false
-        }]))
-        
-        
-        
-        }
+            print("Try to guess now.")
+        }, SKAction.wait(forDuration: 3.0),
+                                    SKAction.run{if self.comparing.count == sequence.count{
+                                        
+                                        for i in 0..<sequence.count {
+                                            
+                                            if self.comparing[i] != sequence[i] {
+                                                
+                                                guessed = false
+                                                break
+                                            } else {
+                                                guessed = true
+                                    }
+                                        }
+                                        if guessed {
+                                            print("correct!")
+                                            self.guessButton.isHidden = false
+                                            
+                                        }
+                                        else {
+                                            print("wrong!!")
+                                            self.wrongButton.isHidden = false
+                                        }
+                                    }
+            else {
+                print("no response!")
+                self.wrongButton.isHidden = false
+            }
+                                    }]))
+    }
     
     override func didMove(to view: SKView) {
         
         if let gameo = self.childNode(withName: "Button1") as? SKSpriteNode {
             button1 = gameo
         }
+        
         if let gameo = self.childNode(withName: "Button2") as? SKSpriteNode {
             button2 = gameo
         }
+        
         if let gameo = self.childNode(withName: "Button3") as? SKSpriteNode {
             button3 = gameo
         }
         
         guessButton.setScale(0.2)
-        guessButton.position = CGPoint(x: 0, y: -50)
+        guessButton.position = CGPoint(x: 0, y: -90)
         guessButton.zPosition = 2
         guessButton.isHidden = true
         addChild(guessButton)
+        
+        wrongButton.setScale(0.2)
+        wrongButton.position = CGPoint(x:0, y: -90)
+        wrongButton.zPosition = 2
+        wrongButton.isHidden = true
+        addChild(wrongButton)
         
         sequenceLabel = SKLabelNode(fontNamed: "FreePixel.ttf")
         sequenceLabel?.position = CGPoint(x: 0, y: 0)
