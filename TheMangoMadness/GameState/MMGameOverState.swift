@@ -16,6 +16,7 @@ class MMGameOverState : MMGameState {
         print("END")
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
+            self.game?.audioInstance.playSoundEffect("Static.mp3")
             trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
                 print(self.game?.score)
