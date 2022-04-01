@@ -19,10 +19,17 @@ class MMRightState : MMGameState {
             game?.scene.addChild(trans)
             trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
+                self.game?.audioInstance.playSoundEffect("CorrectJingle.m4a")
                     trans.removeFromParent()
 
                 }]))
         }
+        
+        if let timer = game?.keyboard?.timer {
+            timer.run(SKAction(named: "goodAnim")!)
+            
+        }
+        
         if let willy = game?.willy {
             willy.isHidden = true
             self.game?.scene.addChild(willy)

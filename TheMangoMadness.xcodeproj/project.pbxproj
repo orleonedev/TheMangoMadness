@@ -28,6 +28,13 @@
 		5110E20B27F5BB6F0063292D /* ColorWilly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20A27F5BB6F0063292D /* ColorWilly.swift */; };
 		5110E20D27F5C6710063292D /* MMGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20C27F5C6710063292D /* MMGame.swift */; };
 		5110E20F27F5C70B0063292D /* MMScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E20E27F5C70B0063292D /* MMScene.swift */; };
+		5125E37D27F67BFA0020FC69 /* CorrectJingle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37727F67BF90020FC69 /* CorrectJingle.m4a */; };
+		5125E37E27F67BFA0020FC69 /* WrongJingle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37827F67BF90020FC69 /* WrongJingle.m4a */; };
+		5125E37F27F67BFA0020FC69 /* WrongJingleDouble.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37927F67BF90020FC69 /* WrongJingleDouble.m4a */; };
+		5125E38027F67BFA0020FC69 /* GameShowLoop1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37A27F67BFA0020FC69 /* GameShowLoop1.m4a */; };
+		5125E38127F67BFA0020FC69 /* GameShowLoopDouble.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37B27F67BFA0020FC69 /* GameShowLoopDouble.m4a */; };
+		5125E38227F67BFA0020FC69 /* CorrectJingleDouble.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5125E37C27F67BFA0020FC69 /* CorrectJingleDouble.m4a */; };
+		5125E38427F67C2F0020FC69 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125E38327F67C2F0020FC69 /* SKTAudio.swift */; };
 		660FB2CE27F5D96F00D60D11 /* KeyboardSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +61,13 @@
 		5110E20A27F5BB6F0063292D /* ColorWilly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWilly.swift; sourceTree = "<group>"; };
 		5110E20C27F5C6710063292D /* MMGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMGame.swift; sourceTree = "<group>"; };
 		5110E20E27F5C70B0063292D /* MMScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMScene.swift; sourceTree = "<group>"; };
+		5125E37727F67BF90020FC69 /* CorrectJingle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = CorrectJingle.m4a; sourceTree = "<group>"; };
+		5125E37827F67BF90020FC69 /* WrongJingle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongJingle.m4a; sourceTree = "<group>"; };
+		5125E37927F67BF90020FC69 /* WrongJingleDouble.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = WrongJingleDouble.m4a; sourceTree = "<group>"; };
+		5125E37A27F67BFA0020FC69 /* GameShowLoop1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameShowLoop1.m4a; sourceTree = "<group>"; };
+		5125E37B27F67BFA0020FC69 /* GameShowLoopDouble.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameShowLoopDouble.m4a; sourceTree = "<group>"; };
+		5125E37C27F67BFA0020FC69 /* CorrectJingleDouble.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = CorrectJingleDouble.m4a; sourceTree = "<group>"; };
+		5125E38327F67C2F0020FC69 /* SKTAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		660FB2CD27F5D96F00D60D11 /* KeyboardSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardSprite.swift; path = SequenceState/KeyboardSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +101,7 @@
 		5110E1DA27F59B240063292D /* TheMangoMadness */ = {
 			isa = PBXGroup;
 			children = (
+				5125E37627F67BD20020FC69 /* Audio */,
 				5110E21227F5D3FE0063292D /* DubbiaUtilità */,
 				5110E21127F5D3A50063292D /* GameState */,
 				5110E21027F5D39B0063292D /* SequenceState */,
@@ -98,6 +113,7 @@
 				5110E20C27F5C6710063292D /* MMGame.swift */,
 				5110E20E27F5C70B0063292D /* MMScene.swift */,
 				5110E1E827F59B260063292D /* Assets.xcassets */,
+				5125E38327F67C2F0020FC69 /* SKTAudio.swift */,
 			);
 			path = TheMangoMadness;
 			sourceTree = "<group>";
@@ -136,6 +152,19 @@
 			);
 			name = "DubbiaUtilità";
 			path = "DubbiaUtilità";
+			sourceTree = "<group>";
+		};
+		5125E37627F67BD20020FC69 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5125E37727F67BF90020FC69 /* CorrectJingle.m4a */,
+				5125E37C27F67BFA0020FC69 /* CorrectJingleDouble.m4a */,
+				5125E37A27F67BFA0020FC69 /* GameShowLoop1.m4a */,
+				5125E37B27F67BFA0020FC69 /* GameShowLoopDouble.m4a */,
+				5125E37827F67BF90020FC69 /* WrongJingle.m4a */,
+				5125E37927F67BF90020FC69 /* WrongJingleDouble.m4a */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,10 +225,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5125E37F27F67BFA0020FC69 /* WrongJingleDouble.m4a in Resources */,
+				5125E37D27F67BFA0020FC69 /* CorrectJingle.m4a in Resources */,
 				5110E1E727F59B240063292D /* Main.storyboard in Resources */,
 				5110E1E927F59B260063292D /* Assets.xcassets in Resources */,
+				5125E37E27F67BFA0020FC69 /* WrongJingle.m4a in Resources */,
+				5125E38127F67BFA0020FC69 /* GameShowLoopDouble.m4a in Resources */,
 				5110E1EC27F59B260063292D /* LaunchScreen.storyboard in Resources */,
 				5110E1E027F59B240063292D /* Actions.sks in Resources */,
+				5125E38027F67BFA0020FC69 /* GameShowLoop1.m4a in Resources */,
+				5125E38227F67BFA0020FC69 /* CorrectJingleDouble.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +262,7 @@
 				5110E20927F5B77F0063292D /* MMFifthSequence.swift in Sources */,
 				5110E20B27F5BB6F0063292D /* ColorWilly.swift in Sources */,
 				5110E1FD27F5AF160063292D /* MMGameOverState.swift in Sources */,
+				5125E38427F67C2F0020FC69 /* SKTAudio.swift in Sources */,
 				5110E1DC27F59B240063292D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

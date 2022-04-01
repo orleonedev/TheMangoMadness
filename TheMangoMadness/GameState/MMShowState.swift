@@ -32,11 +32,11 @@ class MMShowState : MMGameState {
             SKAction.run{
                 switch self.game?.sequence[self.i] {
                 case 1:
-                    self.game?.object?.color = SKColor.green
+                    self.game?.object?.texture = SKTexture(imageNamed: "bolla verde")
                 case 2:
-                    self.game?.object?.color = SKColor.red
+                    self.game?.object?.texture = SKTexture(imageNamed: "bolla rossa")
                 default:
-                    self.game?.object?.color = SKColor.blue
+                    self.game?.object?.texture = SKTexture(imageNamed: "bolla blu")
                 }
                 
                 
@@ -62,6 +62,7 @@ class MMShowState : MMGameState {
             SKAction.wait(forDuration: 2.0),
             SKAction.run {
                 if let obj = self.game?.object {
+                    obj.alpha = 0
                     self.game?.scene.addChild(obj)
                 }
             },

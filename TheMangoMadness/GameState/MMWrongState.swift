@@ -20,6 +20,7 @@ class MMWrongState : MMGameState {
             game?.scene.addChild(trans)
             trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
+                self.game?.audioInstance.playSoundEffect("WrongJingle.m4a")
                     trans.removeFromParent()
                 }]))
             }
@@ -30,6 +31,7 @@ class MMWrongState : MMGameState {
         
         if let willy = game?.willy {
             willy.isHidden = true
+            willy.setScale(1.9)
             self.game?.scene.addChild(willy)
             willy.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                          SKAction.run {
@@ -39,6 +41,7 @@ class MMWrongState : MMGameState {
             },
                                          SKAction.wait(forDuration: 2.5),
                                          SKAction.run {
+                willy.setScale(1.55)
                 willy.removeFromParent()
             }]))
         }

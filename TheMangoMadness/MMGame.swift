@@ -10,6 +10,7 @@ import GameplayKit
 
 class MMGame: NSObject, SceneDelegate {
     
+    var audioInstance = SKTAudio.sharedInstance()
     var gameStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
@@ -52,10 +53,11 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
+        audioInstance.playBackgroundMusic("GameShowLoop1.m4a")
         scene.backgroundColor = SKColor.darkGray
         
         
-        self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 64, height: 64))
+        self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 256, height: 256))
         
         self.tvFrame = SKSpriteNode(color: SKColor.clear, size: CGSize(width: self.scene.size.width*0.85, height: self.scene.size.height*0.63))
         
