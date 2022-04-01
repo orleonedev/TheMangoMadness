@@ -43,7 +43,8 @@ class MMDoItState : MMGameState {
         }
         
         if let timer = game?.keyboard?.timer {
-            timer.run(SKAction(named: "timerAnim")!)
+            timer.run(SKAction.sequence([SKAction(named: "doitAnim")!,
+                                         SKAction(named: "timerAnim")!]))
             
         }
         
