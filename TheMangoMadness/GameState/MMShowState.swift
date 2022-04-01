@@ -33,10 +33,13 @@ class MMShowState : MMGameState {
                 switch self.game?.sequence[self.i] {
                 case 1:
                     self.game?.object?.texture = SKTexture(imageNamed: "bolla verde")
+                    self.game?.audioInstance.playSoundEffect2("Button3.m4a")
                 case 2:
                     self.game?.object?.texture = SKTexture(imageNamed: "bolla rossa")
+                    self.game?.audioInstance.playSoundEffect2("Button1.m4a")
                 default:
                     self.game?.object?.texture = SKTexture(imageNamed: "bolla blu")
+                    self.game?.audioInstance.playSoundEffect2("Button2.m4a")
                 }
                 
                 self.i += 1

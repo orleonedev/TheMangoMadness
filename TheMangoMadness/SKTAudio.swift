@@ -158,7 +158,7 @@ public class SKTAudio {
         if let player = soundEffectPlayer2 {
             player.numberOfLoops = 0
             player.prepareToPlay()
-            player.volume = 0.0
+            player.volume = 0.1
             player.play()
         } else {
             print("Could not create audio player: \(error!)")

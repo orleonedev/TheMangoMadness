@@ -16,7 +16,7 @@ class MMGame: NSObject, SceneDelegate {
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
-    var kind: Int = 1
+//    var kind: Int = 1
     var scene: SKScene {
         get {
             if _scene == nil {
@@ -95,17 +95,20 @@ class MMGame: NSObject, SceneDelegate {
         if gameStateMachine?.currentState is MMDoItState{
             if (node.name == "redButton") {
                     keyboard?.redAnimation()
+                audioInstance.playSoundEffect2("Button1.m4a")
             input.append(2)
                 print(input)
                 }
                 else{
                     if (node.name == "blueButton"){
+                        audioInstance.playSoundEffect2("Button2.m4a")
                         keyboard?.blueAnimation()
                         input.append(3)
                         print(input)
                     }
                     else{
                         if (node.name == "greenButton"){
+                            audioInstance.playSoundEffect2("Button3.m4a")
                             keyboard?.greenAnimation()
                             input.append(1)
                             print(input)
