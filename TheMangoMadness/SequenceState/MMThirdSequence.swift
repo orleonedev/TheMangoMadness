@@ -14,7 +14,7 @@ class MMThirdSequence : MMSequenceState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        game?.kind = 3
         
         
     }

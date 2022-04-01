@@ -13,7 +13,7 @@ class MMSecondSequence : MMSequenceState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        game?.kind = 2
         
         
     }

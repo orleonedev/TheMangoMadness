@@ -39,7 +39,6 @@ class MMShowState : MMGameState {
                     self.game?.object?.texture = SKTexture(imageNamed: "bolla blu")
                 }
                 
-                
                 self.i += 1
                     
                 },
@@ -79,12 +78,7 @@ class MMShowState : MMGameState {
                 self.stateMachine?.enter(MMDoItState.self)
             }
         ]))
-            
-            
-        
-        
-        
-        
+   
     }
     
     override func willExit(to nextState: GKState) {

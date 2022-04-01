@@ -16,6 +16,7 @@ class MMGame: NSObject, SceneDelegate {
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
+    var kind: Int = 1
     var scene: SKScene {
         get {
             if _scene == nil {
