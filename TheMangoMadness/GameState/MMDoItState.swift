@@ -20,6 +20,7 @@ class MMDoItState : MMGameState {
         
         if let trans = game?.transitionSprite {
             game?.scene.addChild(trans)
+            self.game?.audioInstance.playSoundEffect("Static.mp3")
             trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
                     trans.removeFromParent()
