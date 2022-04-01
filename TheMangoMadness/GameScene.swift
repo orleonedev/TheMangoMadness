@@ -71,6 +71,8 @@ class GameScene: SKScene {
     func createSequence(){
         guessButton.isHidden = true
         wrongButton.isHidden = true
+        let waitTime1 = 3.0
+        let waitTime2 = 0.5
         var guessed = false
         comparing = []
         controlling = false
@@ -86,10 +88,11 @@ class GameScene: SKScene {
         },
                                        SKAction.run {self.sequenceLabel?.run(SKAction.fadeAlpha(to: 0.0, duration: 0.2))},
                                        SKAction.wait(forDuration: 0.1), SKAction.run{self.sequenceLabel?.run(SKAction.fadeAlpha(to: 1.0, duration: 0.2))}])
-        self.run(SKAction.sequence([cycle, SKAction.wait(forDuration: 0.5), cycle, SKAction.wait(forDuration: 0.5), cycle, SKAction.run{
+        
+        self.run(SKAction.sequence([cycle, SKAction.wait(forDuration: waitTime2), cycle, SKAction.wait(forDuration: waitTime2), cycle, SKAction.run{
             self.controlling = true
             print("Try to guess now.")
-        }, SKAction.wait(forDuration: 3.0),
+        }, SKAction.wait(forDuration: waitTime1),
                                     SKAction.run{if self.comparing.count == sequence.count{
                                         
                                         for i in 0..<sequence.count {
@@ -148,10 +151,10 @@ class GameScene: SKScene {
         sequenceLabel = SKLabelNode(fontNamed: "FreePixel.ttf")
         sequenceLabel?.position = CGPoint(x: 0, y: 0)
         sequenceLabel?.zPosition = 2
-        sequenceLabel?.color = .white
+        sequenceLabel?.fontColor = .black
         sequenceLabel?.text = "0"
         addChild(sequenceLabel!)
         
-        self.run(SKAction.repeatForever(SKAction.sequence([SKAction.run{self.createSequence()}, SKAction.wait(forDuration: 7.0)])))
+        self.run(SKAction.repeatForever(SKAction.sequence([SKAction.run{self.createSequence()}, SKAction.wait(forDuration: 6.0)])))
     }
 }
