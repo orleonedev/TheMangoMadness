@@ -56,7 +56,7 @@ class MMShowState : MMGameState {
                                                SKAction.run {
                 trans.removeFromParent()
             }])
-            
+            self.game?.audioInstance.playSoundEffect("Static.mp3")
             trans.run(noiseAnim)
         }
             
