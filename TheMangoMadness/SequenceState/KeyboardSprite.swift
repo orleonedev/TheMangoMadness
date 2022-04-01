@@ -11,6 +11,7 @@ import GameplayKit
 class KeyboardSprite: SKNode {
     
     var backgroundButton : SKSpriteNode?
+    var backgroundGame : SKSpriteNode?
     
     var blueButton : SKSpriteNode?
     var redButton : SKSpriteNode?
@@ -44,6 +45,10 @@ class KeyboardSprite: SKNode {
         self.scenaCompleta = SKSpriteNode(texture: SKTexture(imageNamed: "Scenacompletagioco1"), size: CGSize(width: scena.size.width, height: scena.size.height * 1.07))
         self.scenaCompleta?.position = CGPoint(x: 0, y: -(scena.size.height)*0.032)
         self.scenaCompleta?.zPosition = -11
+        
+        self.backgroundGame = SKSpriteNode(texture: SKTexture(imageNamed: "background"), size: CGSize(width: scena.size.width * 0.86, height: scena.size.height * 0.65))
+        self.backgroundGame?.position = CGPoint(x: 0, y: scena.size.height * 0.05)
+        self.backgroundGame?.zPosition = -14
         
         self.canale = SKSpriteNode(texture: SKTexture(imageNamed: "Canale"), size: CGSize(width: scena.size.width, height: scena.size.height * 1.07))
         self.canale?.position = CGPoint(x: 0, y: -(scena.size.height)*0.032)
@@ -95,6 +100,7 @@ class KeyboardSprite: SKNode {
         self.addChild(redButton!)
         self.addChild(greenButton!)
         self.addChild(timer!)
+        self.addChild(backgroundGame!)
 
     }
     
