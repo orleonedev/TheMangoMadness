@@ -12,11 +12,13 @@ class MMGame: NSObject, SceneDelegate {
     
     var audioInstance = SKTAudio.sharedInstance()
     var gameStateMachine: GKStateMachine?
+    var sequenceStateMachine: GKStateMachine?
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
     var kind: Int = 1
+    var streak: Int = 1
     
     var scene: SKScene {
         get {
@@ -52,6 +54,14 @@ class MMGame: NSObject, SceneDelegate {
         
         gameStateMachine = GKStateMachine(states: [show,doIT,wrong,right,gameover])
         
+        let base = MMBaseSequence(withGame: self)
+        let second = MMSecondSequence(withGame: self)
+        let third = MMThirdSequence(withGame: self)
+        let fourth = MMFourthSequence(withGame: self)
+        let fifth = MMFifthSequence(withGame: self)
+        
+        self.sequenceStateMachine = GKStateMachine(states: [base,second,third,fourth,fifth])
+        
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
@@ -82,6 +92,7 @@ class MMGame: NSObject, SceneDelegate {
             willy?.zPosition = -1
         
         gameStateMachine?.enter(MMShowState.self)
+            sequenceStateMachine?.enter(MMBaseSequence.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)

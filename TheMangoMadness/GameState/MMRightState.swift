@@ -45,6 +45,7 @@ class MMRightState : MMGameState {
             }]))
         }
         
+        game?.streak += 1
         game?.score += 10
         game?.scene.run(SKAction.sequence([
             SKAction.wait(forDuration: 3.0),

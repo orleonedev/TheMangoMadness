@@ -9,10 +9,13 @@ import GameplayKit
 
 class MMGameState : GKState {
     
-    var streak: Int = 1
+    
+    
         weak var game: MMGame?
         
         init(withGame: MMGame) {
+            
+            
             self.game = withGame
             super.init()
         }
