@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C64F83E27F6E9C50001B197 /* Button3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C64F83B27F6E9C50001B197 /* Button3.m4a */; };
+		1C64F84027F6E9C50001B197 /* Button2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C64F83D27F6E9C50001B197 /* Button2.m4a */; };
+		1C64F84227F6EE080001B197 /* Button1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1C64F84127F6EE080001B197 /* Button1.m4a */; };
 		5110E1DC27F59B240063292D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1DB27F59B240063292D /* AppDelegate.swift */; };
 		5110E1E027F59B240063292D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5110E1DF27F59B240063292D /* Actions.sks */; };
 		5110E1E427F59B240063292D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110E1E327F59B240063292D /* GameViewController.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C64F83B27F6E9C50001B197 /* Button3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Button3.m4a; sourceTree = "<group>"; };
+		1C64F83D27F6E9C50001B197 /* Button2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Button2.m4a; sourceTree = "<group>"; };
+		1C64F84127F6EE080001B197 /* Button1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Button1.m4a; sourceTree = "<group>"; };
 		5110E1D827F59B240063292D /* TheMangoMadness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMangoMadness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5110E1DB27F59B240063292D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5110E1DF27F59B240063292D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 		5125E37627F67BD20020FC69 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				1C64F84127F6EE080001B197 /* Button1.m4a */,
+				1C64F83D27F6E9C50001B197 /* Button2.m4a */,
+				1C64F83B27F6E9C50001B197 /* Button3.m4a */,
 				5125E37727F67BF90020FC69 /* CorrectJingle.m4a */,
 				5125E37C27F67BFA0020FC69 /* CorrectJingleDouble.m4a */,
 				5125E37A27F67BFA0020FC69 /* GameShowLoop1.m4a */,
@@ -229,8 +238,11 @@
 				5125E37D27F67BFA0020FC69 /* CorrectJingle.m4a in Resources */,
 				5110E1E727F59B240063292D /* Main.storyboard in Resources */,
 				5110E1E927F59B260063292D /* Assets.xcassets in Resources */,
+				1C64F83E27F6E9C50001B197 /* Button3.m4a in Resources */,
+				1C64F84027F6E9C50001B197 /* Button2.m4a in Resources */,
 				5125E37E27F67BFA0020FC69 /* WrongJingle.m4a in Resources */,
 				5125E38127F67BFA0020FC69 /* GameShowLoopDouble.m4a in Resources */,
+				1C64F84227F6EE080001B197 /* Button1.m4a in Resources */,
 				5110E1EC27F59B260063292D /* LaunchScreen.storyboard in Resources */,
 				5110E1E027F59B240063292D /* Actions.sks in Resources */,
 				5125E38027F67BFA0020FC69 /* GameShowLoop1.m4a in Resources */,
@@ -410,7 +422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SA4H49C4LT;
+				DEVELOPMENT_TEAM = J7Z8L7X93B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -440,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SA4H49C4LT;
+				DEVELOPMENT_TEAM = J7Z8L7X93B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
