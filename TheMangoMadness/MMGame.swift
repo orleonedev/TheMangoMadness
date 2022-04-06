@@ -17,8 +17,8 @@ class MMGame: NSObject, SceneDelegate {
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
-    var kind: Int = 1
-    var streak: Int = 1
+    var kind: Int = 3
+    var streak: Int = 2
     
     var scene: SKScene {
         get {
@@ -92,7 +92,7 @@ class MMGame: NSObject, SceneDelegate {
             willy?.zPosition = -1
         
         gameStateMachine?.enter(MMShowState.self)
-            sequenceStateMachine?.enter(MMBaseSequence.self)
+            sequenceStateMachine?.enter(MMThirdSequence.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)

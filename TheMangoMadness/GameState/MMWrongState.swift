@@ -58,6 +58,20 @@ class MMWrongState : MMGameState {
             }
         }
         
+        game?.streak = 0
+        switch game?.sequenceStateMachine?.currentState {
+        case is MMSecondSequence:
+            game?.sequenceStateMachine?.enter(MMBaseSequence.self)
+        case is MMThirdSequence:
+            game?.sequenceStateMachine?.enter(MMSecondSequence.self)
+        case is MMFourthSequence:
+            game?.sequenceStateMachine?.enter(MMThirdSequence.self)
+        case is MMFifthSequence:
+            game?.sequenceStateMachine?.enter(MMFourthSequence.self)
+        default:
+            break
+        }
+        
         print("Health: \(game?.health)")
         if game?.health != 0 {game?.scene.run(SKAction.sequence([
                                                SKAction.wait(forDuration: 3.0),

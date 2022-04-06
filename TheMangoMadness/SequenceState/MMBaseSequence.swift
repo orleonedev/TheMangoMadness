@@ -16,7 +16,8 @@ class MMBaseSequence : MMSequenceState {
     }
     
     override func didEnter(from previousState: GKState?) {
-        
+        print("BASE")
+        game?.kind = 1
         
         
     }

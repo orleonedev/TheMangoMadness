@@ -47,6 +47,29 @@ class MMRightState : MMGameState {
         }
         
         game?.streak += 1
+        print(game?.streak)
+        print(game?.kind)
+        if game!.kind < 5 {
+            if game?.streak != 0 && game!.streak % 3 == 0 {
+                print("TRY TO CHANGE SEQUENCE")
+                switch game?.sequenceStateMachine?.currentState {
+                case is MMBaseSequence:
+                    print("PASSO A SECOND")
+                    game?.sequenceStateMachine?.enter(MMSecondSequence.self)
+                case is MMSecondSequence:
+                    game?.sequenceStateMachine?.enter(MMThirdSequence.self)
+                case is MMThirdSequence:
+                    game?.sequenceStateMachine?.enter(MMFourthSequence.self)
+                case is MMFourthSequence:
+                    game?.sequenceStateMachine?.enter(MMFifthSequence.self)
+                default:
+                    break
+                }
+            }
+                
+        }
+        
+        
         game?.score += 10
         game?.scene.run(SKAction.sequence([
             SKAction.wait(forDuration: 3.0),

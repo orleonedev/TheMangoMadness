@@ -32,13 +32,13 @@ class MMShowState : MMGameState {
             SKAction.run{
                 switch self.game?.sequence[self.i] {
                 case 1:
-                    self.game?.object?.texture = SKTexture(imageNamed: "bolla verde")
+                    self.game?.object?.texture = SKTexture(imageNamed: self.getElementTexture(streak: self.game!.kind, color: 1))
                     self.game?.audioInstance.playSoundEffect2("Button3.m4a")
                 case 2:
-                    self.game?.object?.texture = SKTexture(imageNamed: "bolla rossa")
+                    self.game?.object?.texture = SKTexture(imageNamed: self.getElementTexture(streak: self.game!.kind, color: 2))
                     self.game?.audioInstance.playSoundEffect2("Button1.m4a")
                 default:
-                    self.game?.object?.texture = SKTexture(imageNamed: "bolla blu")
+                    self.game?.object?.texture = SKTexture(imageNamed: self.getElementTexture(streak: self.game!.kind, color: 3))
                     self.game?.audioInstance.playSoundEffect2("Button2.m4a")
                 }
                 
@@ -88,5 +88,27 @@ class MMShowState : MMGameState {
         i = 0
     }
     
-    
+    func getElementTexture(streak: Int , color: Int ) -> String {
+        var assets:[String]
+        let element = GKShuffledDistribution(randomSource: GKRandomSource(), lowestValue: 0, highestValue: 3)
+        var returnable: String
+        switch color {
+        case 1:
+            assets = ["bolla verde","greenapple","greenbutter","greenclover"]
+        case 2:
+            assets = ["bolla rossa","redapple","redbutter","redclover"]
+        default:
+            assets = ["bolla blu","blueapple","bluebutter","blueclover"]
+        }
+        
+        switch streak {
+        case 4,5:
+            returnable = assets[element.nextInt()]
+        default:
+            returnable = assets[0]
+        }
+        
+        print(returnable)
+        return returnable
+    }
 }
