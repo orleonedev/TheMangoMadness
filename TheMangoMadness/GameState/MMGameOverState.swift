@@ -53,6 +53,10 @@ class MMGameOverState : MMGameState {
         
         if let redpuls = game?.keyboard?.redButton {
             redpuls.colorBlendFactor = 0.0
+            redpuls.color = .gray
+            let pulse = SKAction.colorize(withColorBlendFactor: 0.05, duration: 0.5)
+            let sequence = SKAction.sequence([pulse, pulse.reversed()])
+            redpuls.run(SKAction.repeatForever(sequence))
             
         }
     }

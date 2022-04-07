@@ -54,7 +54,7 @@ public class SKTAudio {
             player.numberOfLoops = -1
             player.enableRate = true
             player.prepareToPlay()
-            player.volume = 0.2
+            player.volume = 0.15
             player.play()
         } else {
             print("Could not create audio player: \(error!)")

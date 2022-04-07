@@ -68,7 +68,7 @@ class MMGame: NSObject, SceneDelegate {
     }
     
     func didMoveToView(scene: MMScene, view: SKView) {
-        audioInstance.playBackgroundMusic("GameShowLoop1.m4a")
+        audioInstance.playBackgroundMusic("GameShowLoope.m4a")
         
         scene.backgroundColor = SKColor.darkGray
         
@@ -145,7 +145,7 @@ class MMGame: NSObject, SceneDelegate {
                     let scene = newGame.scene
                     scene.size = (self.scene.size)
                     scene.scaleMode = .aspectFit
-                    self.scene.view?.presentScene(scene, transition: .fade(withDuration: 0.5))                    
+                    self.scene.view?.presentScene(scene, transition: .fade(withDuration: 1.5))
                 }]))
                 
             }
