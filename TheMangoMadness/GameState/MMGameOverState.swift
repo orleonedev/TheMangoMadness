@@ -33,11 +33,27 @@ class MMGameOverState : MMGameState {
         if let finalScore = game?.score {
             let scoreLabel = SKLabelNode(text:"SCORE \(String(format: "%d", finalScore))")
             scoreLabel.fontName = "PixelText"
-            scoreLabel.fontSize = 128.0
-            scoreLabel.position = CGPoint(x: game?.center.x ?? 0.0, y: (game?.center.y ?? 0.0) + 64.0  )
+            scoreLabel.fontSize = 160
+            scoreLabel.position = CGPoint(x: game?.center.x ?? 0.0, y: (game?.center.y ?? 0.0) + 128.0  )
             scoreLabel.alpha = 0.0
             scoreLabel.zPosition = 15
             
+            if let highScore = game?.highScore{
+                if finalScore > highScore {
+                    game?.highScore = finalScore
+            }
+                if let newHighScore = game?.highScore{
+                    let highScoreLabel = SKLabelNode(text:"HIGHSCORE \(String(format: "%d", newHighScore))")
+                    highScoreLabel.fontName = "PixelText"
+                    highScoreLabel.fontSize = 80.0
+                    highScoreLabel.position = CGPoint(x: game?.center.x ?? 0.0, y: (game?.center.y ?? 0.0) + 64.0  )
+                    highScoreLabel.alpha = 0.0
+                    highScoreLabel.zPosition = 15
+                    game?.scene.addChild(highScoreLabel)
+                    highScoreLabel.run(SKAction.fadeIn(withDuration: 2.0))
+                    
+                }
+            }
             game?.scene.addChild(scoreLabel)
             scoreLabel.run(SKAction.fadeIn(withDuration: 2.0))
         }

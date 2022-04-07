@@ -16,6 +16,14 @@ class MMGame: NSObject, SceneDelegate {
     private var _scene: MMScene?
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
+    var highScore: Int {
+        get{
+            return UserDefaults.standard.integer(forKey: "highScore")
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: "highScore")
+        }
+    }
     var health: Int = 3
     var kind: Int = 1
     var streak: Int = 0
@@ -73,11 +81,9 @@ class MMGame: NSObject, SceneDelegate {
         scene.backgroundColor = SKColor.darkGray
         
         
-        self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 256, height: 256))
+        self.object = SKSpriteNode(color: SKColor.black, size: CGSize(width: 256 + 64, height: 256 + 64))
         
         self.tvFrame = SKSpriteNode(color: SKColor.clear, size: CGSize(width: self.scene.size.width*0.85, height: self.scene.size.height*0.63))
-        
-        
         
 
         if let tvFrame = tvFrame  {
@@ -86,7 +92,7 @@ class MMGame: NSObject, SceneDelegate {
             self.transitionSprite = SKSpriteNode(texture: SKTexture(imageNamed: "statico0"),color: SKColor.white, size: CGSize(width: scene.size.width*1.3, height: scene.size.height*1.3))
             transitionSprite?.position = tvFrame.position
             transitionSprite?.zPosition = -13
-            object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y + 64)
+            object?.position = CGPoint(x: tvFrame.position.x, y: tvFrame.position.y)
             self.scene.addChild(tvFrame)
         
         self.keyboard = KeyboardSprite(pos: CGPoint(), scena: scene)

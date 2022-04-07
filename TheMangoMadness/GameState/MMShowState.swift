@@ -17,15 +17,24 @@ class MMShowState : MMGameState {
     
     override func didEnter(from previousState: GKState?) {
         
+        
+        
         if let state = game?.kind {
-            if state == 1 {
+            
+            switch state {
+            
+            case 2:
+                game?.sequence = (1...4).map({_ in Int.random(in: 1...3)})
+            case 3:
+                game?.sequence = (1...3).map({_ in Int.random(in: 1...3)})
+            case 4:
+                game?.sequence = (1...4).map({_ in Int.random(in: 1...3)})
+            case 5:
+                game?.sequence = (1...6).map({_ in Int.random(in: 1...3)})
+            default:
                 game?.sequence = (1...3).map({_ in Int.random(in: 1...3)})
             }
-            else if state == 2{
-                game?.sequence = (1...4).map({_ in Int.random(in: 1...3)})
-            }else {
-                game?.sequence = (1...6).map({_ in Int.random(in: 1...3)})
-            }
+            
         }
         
         
@@ -125,7 +134,7 @@ class MMShowState : MMGameState {
         }
         
         switch streak {
-        case 4,5:
+        case 3,4,5:
             returnable = assets[element.nextInt()]
         default:
             returnable = assets[0]

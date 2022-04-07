@@ -15,8 +15,8 @@ class MMFifthSequence : MMSequenceState {
     
     override func didEnter(from previousState: GKState?) {
         print("FIFTH")
-        game?.waiting = 0.3
-        game?.audioInstance.backgroundMusicPlayer?.rate = 1.5
+        game?.waiting = 0.4
+        game?.audioInstance.backgroundMusicPlayer?.rate = 1.3
         game?.kind = 5
         
     }

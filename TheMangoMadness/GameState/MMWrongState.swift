@@ -28,7 +28,7 @@ class MMWrongState : MMGameState {
                 case 4:
                     self.game?.audioInstance.soundEffectPlayer?.rate = 1.2
                 case 5:
-                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.5
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.3
                 default:
                     self.game?.audioInstance.soundEffectPlayer?.rate = 1.0
                 }

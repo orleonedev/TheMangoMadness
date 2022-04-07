@@ -27,7 +27,7 @@ class MMRightState : MMGameState {
                 case 4:
                     self.game?.audioInstance.soundEffectPlayer?.rate = 1.2
                 case 5:
-                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.5
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.3
                 default:
                     self.game?.audioInstance.soundEffectPlayer?.rate = 1.0
                 }
@@ -61,11 +61,10 @@ class MMRightState : MMGameState {
         print(game?.streak)
         print(game?.kind)
         if game!.kind < 5 {
-            if game?.streak != 0 && game!.streak % 3 == 0 {
-                print("TRY TO CHANGE SEQUENCE")
+            if game?.streak != 0 && game!.streak % 2 == 0 {
+                
                 switch game?.sequenceStateMachine?.currentState {
                 case is MMBaseSequence:
-                    print("PASSO A SECOND")
                     game?.sequenceStateMachine?.enter(MMSecondSequence.self)
                 case is MMSecondSequence:
                     game?.sequenceStateMachine?.enter(MMThirdSequence.self)
