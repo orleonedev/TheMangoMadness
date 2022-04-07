@@ -42,12 +42,21 @@ class MMGameOverState : MMGameState {
             scoreLabel.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        let smile = SKSpriteNode(color: .white, size: CGSize(width: 256, height: 256))
+        let smile = SKSpriteNode(texture: SKTexture(imageNamed: "smile"),color: .white, size: CGSize(width: 476, height: 352))
         smile.position = game?.center ?? CGPoint()
         smile.zPosition = -12
         smile.alpha = 0.0
         game?.scene.addChild(smile)
-        smile.run(SKAction.fadeIn(withDuration: 5.0))
+        smile.run(SKAction.move(by: CGVector(dx: 32.0, dy: 0.0), duration: 0.1))
+        let hehe = SKAction.move(by: CGVector(dx: 0.0, dy: 16.0), duration: 0.1)
+        smile.run(SKAction.repeatForever(SKAction.sequence([hehe,hehe.reversed()])))
+        smile.run(SKAction.fadeAlpha(to: 0.6, duration: 8.0))
+        
+        if let timer = game?.keyboard?.timer {
+            timer.removeAllActions()
+            timer.run(SKAction(named: "retryAnim")!)
+            
+        }
         
         
         
