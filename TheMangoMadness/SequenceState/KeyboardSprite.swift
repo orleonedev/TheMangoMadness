@@ -10,6 +10,14 @@ import GameplayKit
 
 class KeyboardSprite: SKNode {
     
+    var colorBlend: CGFloat = 1.0 {
+        willSet {
+            blueButton?.colorBlendFactor = newValue
+            greenButton?.colorBlendFactor = newValue
+            redButton?.colorBlendFactor = newValue
+        }
+    }
+    
     var backgroundButton : SKSpriteNode?
     var backgroundGame : SKSpriteNode?
     
@@ -73,15 +81,21 @@ class KeyboardSprite: SKNode {
         self.blueButton = SKSpriteNode(texture: SKTexture(imageNamed: "blueButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.blueButton?.position = CGPoint(x: scena.size.width*0.3, y: -scena.size.height*0.378)
         self.blueButton?.name = "blueButton"
+        self.blueButton?.color = .gray
+        self.blueButton?.colorBlendFactor = colorBlend
         
         self.redButton = SKSpriteNode(texture: SKTexture(imageNamed: "redButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.redButton?.position = CGPoint(x: 0, y: -scena.size.height*0.378)
         self.redButton?.zPosition = 1
         self.redButton?.name = "redButton"
+        self.redButton?.color = .gray
+        self.redButton?.colorBlendFactor = colorBlend
         
         self.greenButton = SKSpriteNode(texture: SKTexture(imageNamed: "greenButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.greenButton?.position = CGPoint(x: -scena.size.width*0.3, y: -scena.size.height*0.378)
         self.greenButton?.name = "greenButton"
+        self.greenButton?.color = .gray
+        self.greenButton?.colorBlendFactor = colorBlend
         
         self.timer = SKSpriteNode(texture: SKTexture(imageNamed: "timerbig10"), size: CGSize(width: backgroundButton!.size.width*0.55, height: backgroundButton!.size.height*0.45))
         self.timer?.position = CGPoint(x: 0, y: -scena.size.height*0.26)

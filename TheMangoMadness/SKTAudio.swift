@@ -52,6 +52,7 @@ public class SKTAudio {
         }
         if let player = backgroundMusicPlayer {
             player.numberOfLoops = -1
+            player.enableRate = true
             player.prepareToPlay()
             player.volume = 0.2
             player.play()

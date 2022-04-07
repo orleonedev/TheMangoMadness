@@ -15,7 +15,7 @@ class MMThirdSequence : MMSequenceState {
     
     override func didEnter(from previousState: GKState?) {
         print("THIRD")
-
+        game?.audioInstance.backgroundMusicPlayer?.rate = 1.25
         game?.kind = 3
         
         

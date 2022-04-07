@@ -27,6 +27,7 @@ class MMRightState : MMGameState {
         }
         
         if let timer = game?.keyboard?.timer {
+            timer.removeAllActions()
             timer.run(SKAction(named: "goodAnim")!)
             
         }
@@ -70,7 +71,7 @@ class MMRightState : MMGameState {
         }
         
         
-        game?.score += 10
+        game?.score += 1
         game?.scene.run(SKAction.sequence([
             SKAction.wait(forDuration: 3.0),
             SKAction.run {

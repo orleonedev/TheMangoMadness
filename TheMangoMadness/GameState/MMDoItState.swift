@@ -39,6 +39,8 @@ class MMDoItState : MMGameState {
                                          SKAction.wait(forDuration: 1.5),
                                          SKAction.run {
                 willy.removeFromParent()
+                self.game?.touchEnabled = true
+                self.game?.keyboard?.colorBlend = 0.0
             }]))
         }
         
@@ -55,13 +57,17 @@ class MMDoItState : MMGameState {
         timer = 7
         game?.input.removeAll()
         completed = false
+        game?.touchEnabled = false
+        game?.keyboard?.colorBlend = 1.0
     }
     
     override func update(deltaTime seconds: TimeInterval) {
         
         
         timer -= seconds
-            
+        if game?.input == game?.sequence {
+            completed = true
+        }
         
         
         if timer < 0 {
@@ -72,14 +78,17 @@ class MMDoItState : MMGameState {
                     }
                 }
             }
-            
             if completed {
                 self.stateMachine?.enter(MMRightState.self)
-            }else {
+            }
+            else {
                 self.stateMachine?.enter(MMWrongState.self)
             }
-            
         }
+        if completed {
+            self.stateMachine?.enter(MMRightState.self)
+        }
+        
         
     }
     

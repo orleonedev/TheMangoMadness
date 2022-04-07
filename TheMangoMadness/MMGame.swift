@@ -17,8 +17,10 @@ class MMGame: NSObject, SceneDelegate {
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
-    var kind: Int = 3
-    var streak: Int = 2
+    var kind: Int = 4
+    var streak: Int = 0
+    
+    var touchEnabled: Bool = false
     
     var scene: SKScene {
         get {
@@ -66,6 +68,7 @@ class MMGame: NSObject, SceneDelegate {
     
     func didMoveToView(scene: MMScene, view: SKView) {
         audioInstance.playBackgroundMusic("GameShowLoop1.m4a")
+        
         scene.backgroundColor = SKColor.darkGray
         
         
@@ -92,7 +95,7 @@ class MMGame: NSObject, SceneDelegate {
             willy?.zPosition = -1
         
         gameStateMachine?.enter(MMShowState.self)
-            sequenceStateMachine?.enter(MMThirdSequence.self)
+            sequenceStateMachine?.enter(MMFourthSequence.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)
@@ -104,7 +107,7 @@ class MMGame: NSObject, SceneDelegate {
     
     func touchDown(node: SKNode) {
 
-        if gameStateMachine?.currentState is MMDoItState{
+        if touchEnabled{
             if (node.name == "redButton") {
                     keyboard?.redAnimation()
                 audioInstance.playSoundEffect2("Button1.m4a")

@@ -26,6 +26,7 @@ class MMWrongState : MMGameState {
                 }]))
             }
         if let timer = game?.keyboard?.timer {
+            timer.removeAllActions()
             timer.run(SKAction(named: "lameAnim")!)
             
         }

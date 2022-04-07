@@ -17,7 +17,17 @@ class MMShowState : MMGameState {
     
     override func didEnter(from previousState: GKState?) {
         
-        game?.sequence = (1...3).map({_ in Int.random(in: 1...3)})
+        if let state = game?.kind {
+            if state == 1 {
+                game?.sequence = (1...3).map({_ in Int.random(in: 1...3)})
+            }
+            else if state == 2{
+                game?.sequence = (1...4).map({_ in Int.random(in: 1...3)})
+            }else {
+                game?.sequence = (1...6).map({_ in Int.random(in: 1...3)})
+            }
+        }
+        
         
         print(game?.sequence as Any)
         
@@ -59,7 +69,25 @@ class MMShowState : MMGameState {
             self.game?.audioInstance.playSoundEffect("Static.mp3")
             trans.run(noiseAnim)
         }
+        
+        let sequence = SKAction.sequence([cycle,SKAction.wait(forDuration: 1.0)])
+        
+        var fullSeq = SKAction.sequence([])
+        if let numberOfCycles = game?.sequence.count {
+            switch numberOfCycles {
             
+            case 4:
+                fullSeq = SKAction.sequence([sequence,sequence,sequence,sequence])
+            case 5:
+                fullSeq = SKAction.sequence([sequence,sequence,sequence,sequence,sequence])
+            case 6:
+                fullSeq = SKAction.sequence([sequence,sequence,sequence,sequence,sequence,sequence])
+            default:
+                fullSeq = SKAction.sequence([sequence,sequence,sequence])
+            }
+
+        }
+                    
         self.game?.scene.run(SKAction.sequence([
             SKAction.wait(forDuration: 2.0),
             SKAction.run {
@@ -68,12 +96,7 @@ class MMShowState : MMGameState {
                     self.game?.scene.addChild(obj)
                 }
             },
-            cycle,
-            SKAction.wait(forDuration: 1.0),
-            cycle,
-            SKAction.wait(forDuration: 1.0),
-            cycle,
-            SKAction.wait(forDuration: 1.0),
+            fullSeq,
             SKAction.run {
                 if let obj = self.game?.object {
                     obj.removeFromParent()
