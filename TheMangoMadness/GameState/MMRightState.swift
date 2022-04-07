@@ -21,6 +21,16 @@ class MMRightState : MMGameState {
             trans.run(SKAction.sequence([SKAction(named: "staticAnim")!,
                 SKAction.run {
                 self.game?.audioInstance.playSoundEffect("CorrectJingle.m4a")
+                switch self.game?.kind {
+                case 3:
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.1
+                case 4:
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.2
+                case 5:
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.5
+                default:
+                    self.game?.audioInstance.soundEffectPlayer?.rate = 1.0
+                }
                     trans.removeFromParent()
 
                 }]))

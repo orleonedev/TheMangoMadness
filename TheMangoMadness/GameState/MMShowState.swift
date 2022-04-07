@@ -70,7 +70,7 @@ class MMShowState : MMGameState {
             trans.run(noiseAnim)
         }
         
-        let sequence = SKAction.sequence([cycle,SKAction.wait(forDuration: 1.0)])
+        let sequence = SKAction.sequence([cycle,SKAction.wait(forDuration: game?.waiting ?? 1.0)])
         
         var fullSeq = SKAction.sequence([])
         if let numberOfCycles = game?.sequence.count {

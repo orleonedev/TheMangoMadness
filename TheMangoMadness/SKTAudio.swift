@@ -134,6 +134,7 @@ public class SKTAudio {
         }
         if let player = soundEffectPlayer {
             player.numberOfLoops = 0
+            player.enableRate = true
             player.prepareToPlay()
             player.volume = 0.03
             player.play()
@@ -158,6 +159,7 @@ public class SKTAudio {
         }
         if let player = soundEffectPlayer2 {
             player.numberOfLoops = 0
+            player.enableRate = true
             player.prepareToPlay()
             player.volume = 0.2
             player.play()
