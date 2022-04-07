@@ -80,6 +80,7 @@ class KeyboardSprite: SKNode {
         
         self.blueButton = SKSpriteNode(texture: SKTexture(imageNamed: "blueButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.blueButton?.position = CGPoint(x: scena.size.width*0.3, y: -scena.size.height*0.378)
+        self.blueButton?.zPosition = 1
         self.blueButton?.name = "blueButton"
         self.blueButton?.color = .gray
         self.blueButton?.colorBlendFactor = colorBlend
@@ -93,6 +94,7 @@ class KeyboardSprite: SKNode {
         
         self.greenButton = SKSpriteNode(texture: SKTexture(imageNamed: "greenButton0"), size: CGSize(width: backgroundButton!.size.width*0.2, height: backgroundButton!.size.height*0.4))
         self.greenButton?.position = CGPoint(x: -scena.size.width*0.3, y: -scena.size.height*0.378)
+        self.greenButton?.zPosition = 1
         self.greenButton?.name = "greenButton"
         self.greenButton?.color = .gray
         self.greenButton?.colorBlendFactor = colorBlend

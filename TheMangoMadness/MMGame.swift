@@ -17,8 +17,8 @@ class MMGame: NSObject, SceneDelegate {
     var prevUpdateTime: TimeInterval = 0
     var score: Int = 0
     var health: Int = 3
-    var kind: Int = 3
-    var streak: Int = 2
+    var kind: Int = 1
+    var streak: Int = 0
     
     var touchEnabled: Bool = false
     
@@ -96,7 +96,7 @@ class MMGame: NSObject, SceneDelegate {
             willy?.zPosition = -1
         
         gameStateMachine?.enter(MMShowState.self)
-            sequenceStateMachine?.enter(MMThirdSequence.self)
+            sequenceStateMachine?.enter(MMBaseSequence.self)
         if let keyboardButtonSprite = self.keyboard {
             keyboardButtonSprite.position = self.center
             scene.addChild(keyboardButtonSprite)
@@ -132,6 +132,23 @@ class MMGame: NSObject, SceneDelegate {
                     }
                 }
             
+        }
+        
+        if gameStateMachine?.currentState is MMGameOverState {
+            if (node.name == "redButton") {
+                scene.run(SKAction.sequence([SKAction.run {
+                    self.keyboard?.redAnimation()
+                    self.audioInstance.playSoundEffect2("Button1.m4a")
+                },
+                                             SKAction.run {
+                    let newGame = MMGame()
+                    let scene = newGame.scene
+                    scene.size = (self.scene.size)
+                    scene.scaleMode = .aspectFit
+                    self.scene.view?.presentScene(scene, transition: .fade(withDuration: 0.5))                    
+                }]))
+                
+            }
         }
     }
     
